@@ -11,4 +11,9 @@ class FizzBuzzController extends Controller
     {
         return 0=== $value % 3;
     }
+
+    public function isBuzz(int $value):int
+    {
+        return 0=== $value % 5;
+    }
 }
