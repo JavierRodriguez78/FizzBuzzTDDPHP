@@ -24,4 +24,20 @@ class FizzBuzzControllerTest extends WebTestCase
 
     }
 
+
+    /**
+     * @test
+     */
+    public function itShouldReturnFizzIfDivisibleByFive()
+    {
+        //Arrange
+        $fizzBuzz = new FizzBuzzController();
+        $value = 5;
+        //Act
+        $result = $fizzBuzz->isBuzz($value);
+        //Assertion
+        $this->assertEquals(true,$result);
+
+    }
+
 }
