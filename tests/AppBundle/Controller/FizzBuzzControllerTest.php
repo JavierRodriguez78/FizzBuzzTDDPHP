@@ -66,5 +66,30 @@ class FizzBuzzControllerTest extends WebTestCase
         ];
     }
 
+    /**
+     * @test
+     * @dataProvider buzzNumberProvider
+     */
+    public function itShouldReturnFizzBuzzIfDivisibleBothThreeAndFive($value,$expected)
+    {
+        //Arrange
+        $fizzBuzz = new FizzBuzzController();
+         //Act
+        $result = $fizzBuzz->isFizzBuzz($value);
+        //Assertion
+        $this->assertEquals($expected,$result);
+
+    }
+
+    public function FizzBuzzNumberProvider()
+    {
+        return [
+            [15, true],
+            [30, true],
+            [45, true],
+            [60, true],
+        ];
+    }
+
 
 }
