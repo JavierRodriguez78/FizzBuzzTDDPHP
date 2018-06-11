@@ -6,12 +6,21 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class FizzBuzzControllerTest extends WebTestCase
 {
+
+
     /**
      * @test
      */
-    public function firstTest()
+    public function itShouldReturnFizzIfDivisibleByThree()
     {
-        $this->assertFalse(true);
+        //Arrange
+        $fizzBuzz = new FizzBuzz();
+        $value = 3;
+        //Act
+        $result = $fizzBuzz->isFizz($value);
+        //Assertion
+        $this->assertEquals(true,$result);
+
     }
 
 }
