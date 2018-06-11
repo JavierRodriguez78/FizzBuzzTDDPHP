@@ -3,6 +3,7 @@
 namespace AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use AppBundle\Controller\FizzBuzzController;
 
 class FizzBuzzControllerTest extends WebTestCase
 {
@@ -14,7 +15,7 @@ class FizzBuzzControllerTest extends WebTestCase
     public function itShouldReturnFizzIfDivisibleByThree()
     {
         //Arrange
-        $fizzBuzz = new FizzBuzz();
+        $fizzBuzz = new FizzBuzzController();
         $value = 3;
         //Act
         $result = $fizzBuzz->isFizz($value);
