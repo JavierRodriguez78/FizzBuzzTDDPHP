@@ -11,8 +11,9 @@ class FizzBuzzControllerTest extends WebTestCase
 
     /**
      * @test
+     * @dataProvider fizzNumbersProvider
      */
-    public function itShouldReturnFizzIfDivisibleByThree()
+    public function itShouldReturnFizzIfDivisibleByThree($value, $expected)
     {
         //Arrange
         $fizzBuzz = new FizzBuzzController();
@@ -20,15 +21,28 @@ class FizzBuzzControllerTest extends WebTestCase
         //Act
         $result = $fizzBuzz->isFizz($value);
         //Assertion
-        $this->assertEquals(true,$result);
+        $this->assertEquals($expected,$result);
 
+    }
+
+    public function fizzNumbersProvider()
+    {
+        return[
+            [3, true],
+            [6, true],
+            [9, true],
+            [12, true],
+            [15, true],
+            [18, true],
+        ];
     }
 
 
     /**
      * @test
+     * @dataProvider buzzNumberProvider
      */
-    public function itShouldReturnFizzIfDivisibleByFive()
+    public function itShouldReturnFizzIfDivisibleByFive($value,$expected)
     {
         //Arrange
         $fizzBuzz = new FizzBuzzController();
@@ -36,8 +50,21 @@ class FizzBuzzControllerTest extends WebTestCase
         //Act
         $result = $fizzBuzz->isBuzz($value);
         //Assertion
-        $this->assertEquals(true,$result);
+        $this->assertEquals($expected,$result);
 
     }
+
+    public function buzzNumberProvider()
+    {
+        return [
+            [5, true],
+            [10, true],
+            [15, true],
+            [20, true],
+            [25, true],
+            [30, true],
+        ];
+    }
+
 
 }
