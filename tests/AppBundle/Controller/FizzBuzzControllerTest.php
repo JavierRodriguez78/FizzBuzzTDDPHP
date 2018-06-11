@@ -68,7 +68,7 @@ class FizzBuzzControllerTest extends WebTestCase
 
     /**
      * @test
-     * @dataProvider buzzNumberProvider
+     * @dataProvider FizzBuzzNumberProvider
      */
     public function itShouldReturnFizzBuzzIfDivisibleBothThreeAndFive($value,$expected)
     {
