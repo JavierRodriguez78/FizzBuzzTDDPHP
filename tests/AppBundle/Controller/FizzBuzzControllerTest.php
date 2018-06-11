@@ -84,7 +84,7 @@ class FizzBuzzControllerTest extends WebTestCase
      */
     public function itShouldGenerateTheCorrectReplacementForEachNumber($value, $expected)
     {
-        $this->assertEquals($expected, FizzBuzz::getReplacement($value));
+        $this->assertEquals($expected, FizzBuzzController::getReplacement($value));
     }
 
     public function listValuesProvider()

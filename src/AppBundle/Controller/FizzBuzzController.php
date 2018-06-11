@@ -24,4 +24,18 @@ class FizzBuzzController extends Controller
     {
         return self::isFizz($value) && self::isBuzz($value);
     }
+
+    public static function getReplacement(int $value):string
+    {
+        if(self::isFizzBuzz($value)){
+            return 'FizzBuzz';
+        }
+        if(self::isFizz($value)){
+            return 'Fizz';
+        }
+        if(self::isBuzz($value)){
+            return 'Buzz';
+        }
+        return $value;
+    }
 }
